@@ -274,6 +274,8 @@ uml.EndState = Element.extend({
  * @param {Number} [properties.attributesOffsetY] Offset in y-axis of the attributes.
  * @param {Number} [properties.methodsOffsetX] Offset in x-axis of the methods.
  * @param {Number} [properties.methodsOffsetY] Offset in y-axis of the methods.
+ * @param {Object} [properties.attrAttrs] attributes of the appearance of each class attribute
+ * @param {Object} [properties.methodAttrs] attributes of the appearance of each class method
  * @example
 var c1 = Joint.dia.uml.Class.create({
   rect: {x: 120, y: 70, width: 120, height: 80},
@@ -345,6 +347,7 @@ uml.Class = Element.extend({
 	t = this.paper.text(bb.x + p.attributesOffsetX, bb.y + p.labelOffsetY + p.swimlane1OffsetY + p.attributesOffsetY, str),
 	tbb = t.getBBox();
 	t.attr("text-anchor", "start");
+    t.attr(p.attrAttrs||{});
 	t.translate(0, tbb.height/2);	// tune the y-position
 	return t;
     },
@@ -361,6 +364,7 @@ uml.Class = Element.extend({
 	t = this.paper.text(bb.x + p.methodsOffsetX, bb.y + p.labelOffsetY + p.swimlane1OffsetY + p.attributesOffsetY + bbAtrrs.height + p.swimlane2OffsetY + p.methodsOffsetY, str),
 	tbb = t.getBBox();
 	t.attr("text-anchor", "start");
+    t.attr(p.methodAttrs||{});
 	t.translate(0, tbb.height/2);	// tune the y-position
 	return t;
     },
