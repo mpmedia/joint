@@ -4,3 +4,5 @@
 - disconnect callback is now called right after the joint has
   been disconnected, not just before it's new connection.
 
+"class changed" 
+class changed 
