@@ -474,8 +474,8 @@ Element.prototype = {
 	if (s._isElement) s.properties.parent = this.euid();
 	// if dragging enabled, register mouse down event handler
 	if (!s._isElement && this._opt && this._opt.draggable){
-	    s.mousedown(this.dragger);
-	    s.node.style.cursor = "move";
+	    //s.mousedown(this.dragger);
+	    //s.node.style.cursor = "move";
 	}
 	s.toFront();	// always push new inner to the front
 	return this;
